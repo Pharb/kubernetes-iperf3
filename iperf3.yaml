@@ -14,8 +14,16 @@ spec:
       labels:
         app: iperf3-server
     spec:
-      nodeSelector:
-        kubernetes.io/role: master
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/role
+                operator: In
+                values:
+                - master
       tolerations:
         - key: node-role.kubernetes.io/master
           operator: Exists
