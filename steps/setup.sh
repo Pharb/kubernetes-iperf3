@@ -9,3 +9,4 @@ until $(kubectl get pods -l app=iperf3-server -o jsonpath='{.items[0].status.con
 done
 
 echo "Server is running"
+echo
