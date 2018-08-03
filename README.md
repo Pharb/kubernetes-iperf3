@@ -13,6 +13,18 @@ Any options supported by iperf3 can be added, e.g.:
 $ ./iperf3.sh -t 2
 ```
 
+### NetworkPolicies
+If you need NetworkPolicies you can install it:
+
+```
+$ kubectl apply -f network-policy.yaml
+```
+
+And cleanup afterwards:
+```
+$ kubectl delete -f network-policy.yaml
+```
+
 ### Output:
 ```
 deployment.apps "iperf3-server-deployment" created
@@ -62,7 +74,7 @@ Each iperf3 client will then sequentially run the same benchmark against the ipe
 
 All required Kubernetes resources will be created and removed after the benchmark finished successfully.
 
-This has been tested with v1.9.6 and v1.10.0 of Kubernetes.
+This has been tested with v1.9.6 and v1.10.3 of Kubernetes.
 
 The latest version of this Docker image is used to run iperf3:
 https://hub.docker.com/r/networkstatic/iperf3/
