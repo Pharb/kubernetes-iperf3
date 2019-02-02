@@ -74,7 +74,7 @@ Each iperf3 client will then sequentially run the same benchmark against the ipe
 
 All required Kubernetes resources will be created and removed after the benchmark finished successfully.
 
-This has been tested with v1.9.6 and v1.10.3 of Kubernetes.
+This has been tested with v1.9.6, v1.10.3 and v1.11.6 of Kubernetes.
 
 The latest version of this Docker image is used to run iperf3:
 https://hub.docker.com/r/networkstatic/iperf3/
